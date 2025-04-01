@@ -2,5 +2,6 @@
 /Users/jos/Downloads/prueba-tecnica-docx_2023-06-06_1922/src/main/java/com/example/productosapi/service/ProductoService.java
 /Users/jos/Downloads/prueba-tecnica-docx_2023-06-06_1922/src/main/java/com/example/productosapi/ProductosApiApplication.java
 /Users/jos/Downloads/prueba-tecnica-docx_2023-06-06_1922/src/main/java/com/example/productosapi/model/Producto.java
+/Users/jos/Downloads/prueba-tecnica-docx_2023-06-06_1922/src/main/java/com/example/productosapi/WebConfig.java
 /Users/jos/Downloads/prueba-tecnica-docx_2023-06-06_1922/src/main/java/com/example/productosapi/controller/ProductoController.java
 /Users/jos/Downloads/prueba-tecnica-docx_2023-06-06_1922/src/main/java/com/example/productosapi/exception/GlobalExceptionHandler.java

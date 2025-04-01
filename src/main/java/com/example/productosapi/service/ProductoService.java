@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +28,15 @@ public class ProductoService {
 
     @Transactional
     public Producto save(Producto producto) {
+        return productoRepository.save(producto);
+    }
+
+    @Transactional
+    public Producto update(Long id, Producto producto) {
+        if (!productoRepository.existsById(id)) {
+            throw new EntityNotFoundException("Producto no encontrado con id: " + id);
+        }
+        producto.setId(id);
         return productoRepository.save(producto);
     }
 

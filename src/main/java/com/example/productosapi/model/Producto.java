@@ -23,6 +23,4 @@ public class Producto {
     
     @Column(nullable = false)
     private Integer stock;
-
-    /* SI USAMOS JPA DEBERÍAMOS DE HACER USO DE @Id, @GeneratedValue, @Column, @PrePersist, @PreUpdate */
 } 
