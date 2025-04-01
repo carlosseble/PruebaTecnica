@@ -1,0 +1,6 @@
+com/example/productosapi/service/ProductoService.class
+com/example/productosapi/exception/GlobalExceptionHandler.class
+com/example/productosapi/model/Producto.class
+com/example/productosapi/ProductosApiApplication.class
+com/example/productosapi/controller/ProductoController.class
+com/example/productosapi/repository/ProductoRepository.class

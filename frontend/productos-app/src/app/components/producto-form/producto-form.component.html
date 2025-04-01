@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="header">
+    <h1>{{ isEditMode ? 'Editar' : 'Nuevo' }} Producto</h1>
+  </div>
+
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="productoForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre" placeholder="Ej. iPhone 13">
+            <mat-error *ngIf="productoForm.get('nombre')?.hasError('required')">
+              {{ getErrorMessage('nombre') }}
+            </mat-error>
+            <mat-error *ngIf="productoForm.get('nombre')?.hasError('minlength')">
+              {{ getErrorMessage('nombre') }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field appearance="outline">
+            <mat-label>Descripción</mat-label>
+            <textarea matInput formControlName="descripcion" rows="3" placeholder="Describe el producto"></textarea>
+            <mat-error *ngIf="productoForm.get('descripcion')?.hasError('required')">
+              {{ getErrorMessage('descripcion') }}
+            </mat-error>
+            <mat-error *ngIf="productoForm.get('descripcion')?.hasError('minlength')">
+              {{ getErrorMessage('descripcion') }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field appearance="outline">
+            <mat-label>Precio</mat-label>
+            <input matInput type="number" formControlName="precio" placeholder="0.00">
+            <span matSuffix>&nbsp;€</span>
+            <mat-error *ngIf="productoForm.get('precio')?.hasError('required')">
+              {{ getErrorMessage('precio') }}
+            </mat-error>
+            <mat-error *ngIf="productoForm.get('precio')?.hasError('min')">
+              {{ getErrorMessage('precio') }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field appearance="outline">
+            <mat-label>Stock</mat-label>
+            <input matInput type="number" formControlName="stock" placeholder="0">
+            <mat-error *ngIf="productoForm.get('stock')?.hasError('required')">
+              {{ getErrorMessage('stock') }}
+            </mat-error>
+            <mat-error *ngIf="productoForm.get('stock')?.hasError('min')">
+              {{ getErrorMessage('stock') }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-actions">
+          <button mat-button type="button" (click)="confirmarCancelar()">Cancelar</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!productoForm.valid">
+            {{ isEditMode ? 'Actualizar' : 'Crear' }}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div> 
